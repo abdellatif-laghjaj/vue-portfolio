@@ -3,11 +3,11 @@ export default {
     title: 'Technology',
     type: 'document',
     fields: [
-      {
-        name: 'title',
-        title: 'Title',
-        type: 'string',
-      },
+        {
+            name: 'title',
+            title: 'Title',
+            type: 'string',
+        },
     ],
-  }
+}
   
