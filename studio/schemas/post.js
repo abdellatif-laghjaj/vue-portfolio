@@ -1,6 +1,6 @@
 export default {
-  name: 'post',
-  title: 'Post',
+  name: 'project',
+  title: 'Project',
   type: 'document',
   fields: [
     {
@@ -9,19 +9,13 @@ export default {
       type: 'string',
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: 'description',
+      title: 'Description',
+      type: 'blockContent',
       options: {
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
     },
     {
       name: 'mainImage',
@@ -32,20 +26,10 @@ export default {
       },
     },
     {
-      name: 'categories',
-      title: 'Categories',
+      name: 'technologies',
+      title: 'Technologies',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      of: [{type: 'reference', to: {type: 'technology'}}],
     },
   ],
 
