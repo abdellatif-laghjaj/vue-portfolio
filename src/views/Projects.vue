@@ -15,7 +15,7 @@
 
       <!-- Filter -->
       <div class="flex items-center justify-center">
-        <div class="tabs tabs-boxed flex items-center justify-center w-72 mt-5">
+        <div class="tabs tabs-boxed flex items-center justify-center w-11/12 sm:w-72 mt-5">
           <a class="tab h-12 font-bold tab-active" @click="filterProjects('all')" data-cat="all">All</a>
           <a class="tab h-12 font-bold" @click="filterProjects('web')" data-cat="web">Web</a>
           <a class="tab h-12 font-bold" @click="filterProjects('mobile')" data-cat="mobile">Mobile</a>
@@ -25,7 +25,7 @@
 
       <!-- Projects -->
       <div class="projects flex flex-wrap -m-4 mt-4" v-if="loaded">
-        <div class="xl:w-1/3 md:w-1/2 p-4 project" v-for="project in projects" :key="project.id">
+        <div class="xl:w-1/3 md:w-1/2 p-4 project" v-for="project in filtredProjects" :key="project.id">
           <div class="image">
             <img :src="project.image" alt="project image">
             <div class="details">
@@ -82,6 +82,7 @@ export default {
   data() {
     return {
       projects: [],
+      filtredProjects: [],
       loaded: false,
     }
   },
@@ -89,6 +90,7 @@ export default {
     getProjects() {
       api.get("/projects").then((response) => {
         this.projects = response.data;
+        this.filtredProjects = response.data;
         this.loaded = true;
       });
     },
@@ -104,8 +106,7 @@ export default {
       if (category === "all") {
         this.getProjects();
       } else {
-        this.filteredProjects = this.projects.filter((project) => project.category === category);
-        this.projects = this.filteredProjects;
+        this.filtredProjects = this.projects.filter((project) => project.category === category);
       }
     },
     makeTextShort(text, maxLength) {
