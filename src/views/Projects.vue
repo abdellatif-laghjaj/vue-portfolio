@@ -47,35 +47,16 @@
 
       <!-- Projects -->
       <div class="projects flex flex-wrap -m-4 mt-4">
-        <div class="xl:w-1/4 md:w-1/2 p-4 project" v-for="project in projects" :key="project.id">
-          <a class="group relative block bg-black h-full">
-            <img :src="project.image"
-                 class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-30"/>
-            <div class="relative p-8 h-full">
-              <p class="badge badge-primary text-sm font-medium uppercase tracking-widest">
-                {{ project.category }}
-              </p>
-              <p class="text-xl font-bold text-white">{{ project.title }}</p>
-              <div class="mt-10">
-                <div
-                    class="translate-y-8 bottom-0 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  <p class="text-sm text-white">
-                    {{ makeTextShort(project.description, 80) }}
-                  </p>
-                </div>
-
-                <!-- Tags -->
-                <div
-                    class="translate-y-8 absolute bottom-2 left-2 flex gap-2 flex-wrap transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  <div class="badge badge-secondary" v-for="tag in project.tags" :key="tag.id">
-                    {{ tag }}
-                  </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div
-                    class="translate-y-8 absolute bottom-2 right-2 flex gap-2 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  <a :href="project.demo" target="_blank" class="btn btn-circle btn-primary">
+        <div class="xl:w-1/3 md:w-1/2 p-4 project" v-for="project in projects" :key="project.id">
+          <div class="image">
+            <img :src="project.image" alt="project image">
+            <div class="details">
+              <h2>{{ makeTextShort(project.title, 50) }}</h2>
+              <p>{{ makeTextShort(project.description, 50) }}</p>
+              <div class="more">
+                <a href="#" class="read-more">Read <span>More</span></a>
+                <div class="icon-links flex flex-row items-center gap-1">
+                  <a href="#" class="bg-primary p-2 rounded-full">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                       <path fill-rule="evenodd"
@@ -83,7 +64,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                   </a>
-                  <a :href="project.link" target="_blank" class="btn btn-circle btn-secondary">
+                  <a href="#" class="bg-secondary p-2 rounded-full">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd"
                             d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
@@ -93,7 +74,7 @@
                 </div>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -126,8 +107,85 @@ const makeTextShort = (text, length) => {
 </script>
 
 <style scoped>
-.project {
-  height: 340px;
+.image {
+  position: relative;
+  flex: 1;
+  max-width: 460px;
+  height: 320px;
+  overflow: hidden;
 }
 
+.image img {
+  opacity: 0.8;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  vertical-align: top;
+  transition: 0.6s;
+  transition-property: opacity;
+}
+
+.image:hover img {
+  opacity: 0.2;
+}
+
+.image .details {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.image .details h2 {
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 70px;
+  transition: 0.4s;
+  transition-property: transform;
+}
+
+.image .details h2 span {
+  font-weight: 900;
+}
+
+.image:hover .details h2 {
+  transform: translateY(-30px);
+}
+
+.image .details p {
+  margin: 30px 30px 0 30px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transition: 0.6s;
+  transition-property: opacity, transform;
+}
+
+.image:hover .details p {
+  opacity: 1;
+  transform: translateY(-40px);
+}
+
+.more {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  bottom: -80px;
+  transition: 0.6s;
+  transition-property: bottom;
+}
+
+.image:hover .more {
+  bottom: 0;
+}
 </style>
