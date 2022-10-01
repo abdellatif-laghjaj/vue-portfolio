@@ -147,8 +147,8 @@ const makeTextShort = (text, length) => {
   margin-top: 8px;
   font-size: 25px;
   font-weight: bold;
-  transition: 0.4s;
-  transition-property: transform;
+  opacity: 0;
+  transition: all 0.6s ease;
 }
 
 .image .details p {
@@ -169,6 +169,10 @@ const makeTextShort = (text, length) => {
   opacity: 0;
   transition: 0.6s;
   transition-property: opacity, transform;
+}
+
+.image:hover .details h2{
+  opacity: 1;
 }
 
 .image:hover .details p {
