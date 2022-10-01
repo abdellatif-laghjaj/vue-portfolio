@@ -64,11 +64,11 @@
                   </p>
                 </div>
 
-                <!-- technologies -->
+                <!-- Tags -->
                 <div
                     class="translate-y-8 absolute bottom-2 left-2 flex gap-2 flex-wrap transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  <div class="badge badge-secondary" v-for="tech in project.tags" :key="tech.id">
-                    {{ tech }}
+                  <div class="badge badge-secondary" v-for="tag in project.tags" :key="tag.id">
+                    {{ tag }}
                   </div>
                 </div>
 
