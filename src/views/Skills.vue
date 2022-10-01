@@ -15,53 +15,65 @@
       </p>
 
       <!-- Skills -->
-      <div class="flex flex-wrap gap-3 mt-6">
+      <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mt-6">
         <!-- Skill -->
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
 
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
 
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-          <div class="skill-name">
-            <span class="font-bold">HTML</span>
-          </div>
-        </div>
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-          <div class="skill-name">
-            <span class="font-bold">HTML</span>
-          </div>
-        </div>
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-          <div class="skill-name">
-            <span class="font-bold">HTML</span>
-          </div>
-        </div>
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-          <div class="skill-name">
-            <span class="font-bold">HTML</span>
-          </div>
-        </div>
-        <div class="skill flex items-center justify-center flex-col border-primary border-2 gap-3">
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
 
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <div class="skill-name">
+            <span class="font-bold">HTML</span>
+          </div>
+        </div>
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <div class="skill-name">
+            <span class="font-bold">HTML</span>
+          </div>
+        </div>
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <div class="skill-name">
+            <span class="font-bold">HTML</span>
+          </div>
+        </div>
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <div class="skill-name">
+            <span class="font-bold">HTML</span>
+          </div>
+        </div>
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <div class="skill-name">
+            <span class="font-bold">HTML</span>
+          </div>
+        </div>
+        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <div class="skill-name">
+            <span class="font-bold">HTML</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -87,7 +99,6 @@ onMounted(() => {
 
 <style scoped>
 .skill {
-  width: 110px;
   border-radius: 10px;
   padding: 10px 16px;
 }
