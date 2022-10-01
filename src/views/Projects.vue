@@ -51,8 +51,11 @@
           <div class="image">
             <img :src="project.image" alt="project image">
             <div class="details">
-              <h2>{{ makeTextShort(project.title, 50) }}</h2>
-              <p>{{ makeTextShort(project.description, 50) }}</p>
+              <h2>{{ project.title }}</h2>
+              <p>{{ makeTextShort(project.description, 80) }}</p>
+              <div class="tags flex gap-2 items-center justify-center flex-wrap">
+                <span class="badge badge-secondary" v-for="tag in project.tags" :key="tag">{{ tag }}</span>
+              </div>
               <div class="more">
                 <a href="#" class="read-more">Read <span>More</span></a>
                 <div class="icon-links flex flex-row items-center gap-1">
@@ -141,20 +144,11 @@ const makeTextShort = (text, length) => {
 
 .image .details h2 {
   text-align: center;
-  font-size: 35px;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin-top: 70px;
+  margin-top: 8px;
+  font-size: 25px;
+  font-weight: bold;
   transition: 0.4s;
   transition-property: transform;
-}
-
-.image .details h2 span {
-  font-weight: 900;
-}
-
-.image:hover .details h2 {
-  transform: translateY(-30px);
 }
 
 .image .details p {
@@ -167,9 +161,24 @@ const makeTextShort = (text, length) => {
   transition-property: opacity, transform;
 }
 
+.image .tags {
+  margin: 30px 30px 0 30px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transition: 0.6s;
+  transition-property: opacity, transform;
+}
+
 .image:hover .details p {
   opacity: 1;
-  transform: translateY(-40px);
+  transform: translateY(-20px);
+}
+
+.image:hover .tags {
+  opacity: 1;
+  transform: translateY(-20px);
 }
 
 .more {
