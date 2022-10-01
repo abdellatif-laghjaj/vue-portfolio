@@ -28,4 +28,8 @@ import NavBar from "./components/NavBar.vue";
 ::-webkit-scrollbar-thumb:hover {
   background: #7a7777;
 }
+
+#app {
+  user-select: none;
+}
 </style>
