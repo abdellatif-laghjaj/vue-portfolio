@@ -18,58 +18,63 @@
       <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mt-6">
         <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
 
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
 
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
 
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
+
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
+
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
+
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
         </div>
+
+        <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-          <div class="skill-name">
-            <span class="font-bold">HTML</span>
-          </div>
-        </div>
-        <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-16"/>
           <div class="skill-name">
             <span class="font-bold">HTML</span>
           </div>
@@ -101,5 +106,33 @@ onMounted(() => {
 .skill {
   border-radius: 10px;
   padding: 10px 16px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.skill::before,
+.skill::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.skill::before {
+  content: "";
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  background: radial-gradient(600px circle at 100px 100px, rgba(255, 255, 255, 0.4), transparent 40%);
+  z-index: 2;
 }
 </style>
