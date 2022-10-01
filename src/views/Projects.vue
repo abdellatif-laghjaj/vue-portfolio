@@ -14,7 +14,7 @@
       </p>
 
       <!-- Filter -->
-      <div class="btn-group mt-4">
+      <div class="btn-group mt-4 flex items-center justify-center">
         <button class="btn">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
@@ -46,7 +46,7 @@
       </div>
 
       <!-- Projects -->
-      <div class="projects flex flex-wrap -m-4 mt-4">
+      <div class="projects flex flex-wrap -m-4 mt-4" v-if="loaded">
         <div class="xl:w-1/3 md:w-1/2 p-4 project" v-for="project in projects" :key="project.id">
           <div class="image">
             <img :src="project.image" alt="project image">
@@ -57,9 +57,11 @@
                 <span class="badge badge-secondary" v-for="tag in project.tags" :key="tag">{{ tag }}</span>
               </div>
               <div class="more">
-                <a href="#" class="read-more">Read <span>More</span></a>
+                <a class="read-more badge badge-primary font-bold py-2">
+                  {{ project.category }}
+                </a>
                 <div class="icon-links flex flex-row items-center gap-1">
-                  <a href="#" class="bg-primary p-2 rounded-full">
+                  <a :href="project.demo" target="_blank" class="bg-primary p-2 rounded-full">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                       <path fill-rule="evenodd"
@@ -67,7 +69,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                   </a>
-                  <a href="#" class="bg-secondary p-2 rounded-full">
+                  <a :href="project.link" target="_blank" class="bg-secondary p-2 rounded-full">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd"
                             d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
@@ -80,6 +82,16 @@
           </div>
         </div>
       </div>
+      <div class="flex items-center justify-center" v-else>
+        <lottie-player
+            src="loading.json"
+            background="transparent"
+            speed="1"
+            style="width: 240px; height: 240px"
+            loop autoplay>
+
+        </lottie-player>
+      </div>
     </div>
   </div>
 </template>
@@ -89,11 +101,13 @@ import {onMounted, ref} from "vue";
 import api from "../api.js";
 
 let projects = ref([]);
+let loaded = ref(false);
 
 //fetch skills from api
 const fetchProjects = () => {
   api.get("/projects").then((response) => {
     projects.value = response.data;
+    loaded.value = true;
   });
 }
 onMounted(() => {
@@ -116,6 +130,7 @@ const makeTextShort = (text, length) => {
   max-width: 460px;
   height: 320px;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .image img {
@@ -171,7 +186,7 @@ const makeTextShort = (text, length) => {
   transition-property: opacity, transform;
 }
 
-.image:hover .details h2{
+.image:hover .details h2 {
   opacity: 1;
 }
 

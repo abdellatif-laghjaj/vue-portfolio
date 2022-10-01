@@ -9,10 +9,11 @@
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
           <NavLink to="/" label="Home"/>
-          <NavLink to="/about" label="About"/>
-          <NavLink to="/skills" label="Skills"/>
-          <NavLink to="/projects" label="Projects"/>
-          <NavLink to="/contact" label="Contact"/>
+          <NavLink to="/about" label="About" class="my-1"/>
+          <NavLink to="/skills" label="Skills" class="my-1"/>
+          <NavLink to="/projects" label="Projects" class="my-1"/>
+          <NavLink to="/services" label="Services" class="my-1"/>
+          <NavLink to="/contact" label="Contact" class="my-1"/>
         </ul>
       </div>
       <a class="btn btn-ghost normal-case text-xl">
@@ -25,6 +26,7 @@
         <NavLink to="/about" label="About"/>
         <NavLink to="/skills" label="Skills"/>
         <NavLink to="/projects" label="Projects"/>
+        <NavLink to="/services" label="Services"/>
         <NavLink to="/contact" label="Contact"/>
       </ul>
     </div>
