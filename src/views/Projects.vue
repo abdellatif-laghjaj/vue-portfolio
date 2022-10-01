@@ -16,20 +16,19 @@
       <!-- Projects -->
       <div class="projects flex flex-wrap -m-4 mt-6">
         <div class="xl:w-1/4 md:w-1/2 p-4 project" v-for="project in projects" :key="project.id">
-          <a class="group relative block bg-black">
+          <a class="group relative block bg-black h-full">
             <img :src="project.image"
                  class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40"/>
-
-            <div class="relative p-8">
+            <div class="relative p-8 h-full">
               <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
                 {{ project.category }}
               </p>
-              <p class="text-2xl font-bold text-white">{{ project.title }}</p>
-              <div class="mt-64">
+              <p class="text-xl font-bold text-white">{{ project.title }}</p>
+              <div class="mt-10">
                 <div
                     class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                   <p class="text-sm text-white">
-                    {{ project.description }}
+                    {{ makeTextShort(project.description, 80) }}
                   </p>
                 </div>
               </div>
@@ -57,16 +56,18 @@ onMounted(() => {
   fetchProjects();
 });
 
+const makeTextShort = (text, length) => {
+  if (text.length > length) {
+    return text.substring(0, length) + "...";
+  }
+  return text;
+}
+
 </script>
 
 <style scoped>
 .project {
   height: 340px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 </style>
