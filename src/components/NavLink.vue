@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="to">
-    <li><a>{{ label }}</a></li>
-  </router-link>
+  <li id="navbar-link">
+    <router-link :to="to">{{ label }}</router-link>
+  </li>
 </template>
 
 <script setup>

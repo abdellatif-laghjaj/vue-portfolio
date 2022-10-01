@@ -16,18 +16,20 @@
           <NavLink to="/contact" label="Contact" class="my-1"/>
         </ul>
       </div>
-      <a class="btn btn-ghost normal-case text-xl">
-        Abdel<span class="text-primary">.</span>
-      </a>
+      <router-link to="/">
+        <a class="btn btn-ghost normal-case text-xl">
+          Abdel<span class="text-primary">.</span>
+        </a>
+      </router-link>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal p-0">
-        <NavLink to="/" label="Home"/>
-        <NavLink to="/about" label="About"/>
-        <NavLink to="/skills" label="Skills"/>
-        <NavLink to="/projects" label="Projects"/>
-        <NavLink to="/services" label="Services"/>
-        <NavLink to="/contact" label="Contact"/>
+        <NavLink to="/" label="Home" class="mx-1"/>
+        <NavLink to="/about" label="About" class="mx-1"/>
+        <NavLink to="/skills" label="Skills" class="mx-1"/>
+        <NavLink to="/projects" label="Projects" class="mx-1"/>
+        <NavLink to="/services" label="Services" class="mx-1"/>
+        <NavLink to="/contact" label="Contact" class="mx-1"/>
       </ul>
     </div>
     <div class="navbar-end">
