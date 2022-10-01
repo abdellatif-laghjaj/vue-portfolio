@@ -14,46 +14,27 @@
       </p>
 
       <!-- Projects -->
-      <div class="flex flex-wrap -m-4 mt-6">
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400"
-                 alt="content">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401"
-                 alt="content">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402"
-                 alt="content">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
-        </div>
-        <div class="xl:w-1/4 md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403"
-                 alt="content">
-            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon
-              disrupt edison bulbche.</p>
-          </div>
+      <div class="projects flex flex-wrap -m-4 mt-6">
+        <div class="xl:w-1/4 md:w-1/2 p-4 project" v-for="project in projects" :key="project.id">
+          <a class="group relative block bg-black">
+            <img :src="project.image"
+                 class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40"/>
+
+            <div class="relative p-8">
+              <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
+                {{ project.category }}
+              </p>
+              <p class="text-2xl font-bold text-white">{{ project.title }}</p>
+              <div class="mt-64">
+                <div
+                    class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                  <p class="text-sm text-white">
+                    {{ project.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -70,7 +51,6 @@ let projects = ref([]);
 const fetchProjects = () => {
   api.get("/projects").then((response) => {
     projects.value = response.data;
-    console.log(projects.value);
   });
 }
 onMounted(() => {
@@ -80,4 +60,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.project {
+  height: 340px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 </style>
