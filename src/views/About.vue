@@ -9,7 +9,7 @@
     <!-- Avatar -->
     <div class="avatar mt-3">
       <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="https://placeimg.com/192/192/people"/>
+        <img src="/src/assets/my_image.png"/>
       </div>
     </div>
 
