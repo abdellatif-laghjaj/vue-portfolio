@@ -39,7 +39,7 @@
                   {{ project.category }}
                 </a>
                 <div class="icon-links flex flex-row items-center gap-1">
-                  <a :href="project.demo" target="_blank" class="bg-accent p-2 rounded-full">
+                  <a :href="project.demo" target="_blank" class="bg-accent p-2 rounded-full" v-if="project.has_demo">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                       <path fill-rule="evenodd"
