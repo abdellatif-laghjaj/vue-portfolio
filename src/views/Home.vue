@@ -28,7 +28,6 @@
   </div>
 
   <!-- Modal -->
-
   <input type="checkbox" id="cv-modal" class="modal-toggle"/>
   <div class="modal modal-bottom sm:modal-middle">
     <div class="modal-box">
