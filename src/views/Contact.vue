@@ -1,5 +1,5 @@
 <template>
-  <div class="container w-11/12 sm:w-3/5 mx-auto flex items-center justify-center flex-col">
+  <div class="container w-11/12 mx-auto flex items-center justify-center flex-col">
     <!-- Section Title -->
     <div class="text-4xl font-bold my-3">
       <span>Contact </span>
@@ -7,13 +7,11 @@
     </div>
 
     <!-- Section Content -->
-    <div class="hero">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="text-center lg:text-left">
-          <h2 class="text-2xl font-bold">Or <span class="text-primary">Use</span>:</h2>
-          <div class="stats stats-vertical h-full shadow">
-
-            <div class="stat">
+    <div class="hero flex items-center justify-center flex-col">
+      <div class="hero-content flex-col items-center justify-center lg:flex-row-reverse">
+        <div class="text-center">
+          <div class="stats stats-vertical h-full w-[90%] sm:w-full  shadow w-full">
+            <div class="stat flex flex-col items-start">
               <div class="stat-title">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -27,7 +25,7 @@
               </div>
             </div>
 
-            <div class="stat">
+            <div class="stat flex flex-col items-start">
               <div class="stat-title">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -40,7 +38,7 @@
               </div>
             </div>
 
-            <div class="stat">
+            <div class="stat flex flex-col items-start">
               <div class="stat-title">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -55,7 +53,7 @@
             </div>
           </div>
         </div>
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
+        <div class="card flex-shrink-0 w-full sm:w-3/5 shadow-xl bg-base-100">
           <div class="card-body">
             <div class="form-control">
               <input type="text" placeholder="Your name" name="name" required class="input input-bordered"/>
