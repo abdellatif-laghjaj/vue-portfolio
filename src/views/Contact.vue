@@ -105,9 +105,9 @@ export default {
 
       emailjs.send('service_ef8gklo', 'template_twmuwqw', templateParams)
           .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
+            alert("Message sent successfully");
           }, function (error) {
-            console.log('FAILED...', error);
+            alert("Oops, Something went wrong, please try again later");
           });
     }
   },
