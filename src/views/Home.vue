@@ -11,8 +11,7 @@
 
         <!-- Name -->
         <h1 class="text-4xl font-bold">Hello World 👋</h1>
-        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p class="py-6" id="typewriter"></p>
         <button class="btn btn-primary">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -25,7 +24,10 @@
   </div>
 </template>
 
-<script setup>
+<script>
+export default {
+  name: "Home",
+}
 </script>
 
 <style scoped>
