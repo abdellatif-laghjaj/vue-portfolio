@@ -54,24 +54,29 @@
           </div>
         </div>
         <div class="card flex-shrink-0 w-full sm:w-3/5 shadow-xl bg-base-100">
-          <div class="card-body">
-            <div class="form-control">
-              <input type="text" placeholder="Your name" name="name" required class="input input-bordered"/>
-            </div>
-            <div class="form-control">
-              <input type="text" placeholder="Subject" name="subject" required class="input input-bordered"/>
-            </div>
-            <div class="form-control">
-              <input type="email" placeholder="Your email" name="email" required class="input input-bordered"/>
-            </div>
-            <div class="form-control">
+          <form method="post" @submit.prevent="submit">
+            <div class="card-body">
+              <div class="form-control">
+                <input type="text" placeholder="Your name" name="name" required class="input input-bordered"
+                       v-model="name">
+              </div>
+              <div class="form-control">
+                <input type="text" placeholder="Subject" name="subject" required class="input input-bordered"
+                       v-model="subject">
+              </div>
+              <div class="form-control">
+                <input type="email" placeholder="Your email" name="email" required class="input input-bordered"
+                       v-model="email">
+              </div>
+              <div class="form-control">
               <textarea rows="3" placeholder="Your message" name="message" required
-                        class="textarea h-24 textarea-bordered"></textarea>
+                        class="textarea h-24 textarea-bordered" v-model="message"></textarea>
+              </div>
+              <div class="form-control mt-3">
+                <button class="btn btn-primary">submit</button>
+              </div>
             </div>
-            <div class="form-control mt-3">
-              <button class="btn btn-primary">submit</button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -80,7 +85,32 @@
 
 <script>
 export default {
-  name: "Contact"
+  name: "Contact",
+  data() {
+    return {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    };
+  },
+  methods: {
+    submit() {
+      var templateParams = {
+        name: this.name,
+        email: this.email,
+        subject: this.subject,
+        message: this.message,
+      };
+
+      emailjs.send('service_ef8gklo', 'template_twmuwqw', templateParams)
+          .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+          }, function (error) {
+            console.log('FAILED...', error);
+          });
+    }
+  },
 }
 </script>
 
