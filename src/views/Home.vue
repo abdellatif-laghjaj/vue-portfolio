@@ -1,7 +1,7 @@
 <template>
   <div class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center">
-      <div class="max-w-lg mt-[-40px]">
+      <div class="max-w-lg mt-[-50px] sm:mt-0">
         <!-- Avatar -->
         <div class="avatar mb-6">
           <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
