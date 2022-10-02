@@ -60,15 +60,8 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-center" v-else>
-        <lottie-player
-            src="loading.json"
-            background="transparent"
-            speed="1"
-            style="width: 240px; height: 240px"
-            loop autoplay>
-
-        </lottie-player>
+      <div class="flex items-center justify-center mt-10" v-else>
+        <button class="btn btn-square loading"></button>
       </div>
     </div>
   </div>
