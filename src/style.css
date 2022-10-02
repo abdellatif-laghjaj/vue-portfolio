@@ -4,5 +4,4 @@
 
 #navbar-link .router-link-active {
     @apply bg-primary;
-    @apply text-white;
 }

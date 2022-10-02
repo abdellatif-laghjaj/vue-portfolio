@@ -12,7 +12,7 @@
         <!-- Name -->
         <h1 class="text-4xl font-bold">Hello World 👋</h1>
         <div class="mockup-code flex items-start flex-col my-3">
-          <pre data-prefix="$"><code>npm install @love.js</code></pre>
+          <pre data-prefix="$"><code>npm install @love.js </code></pre>
           <pre data-prefix=">" class="text-warning"><code>installing...</code></pre>
           <pre data-prefix=">" class="text-error"><code>error: love not found</code></pre>
         </div>
