@@ -25,6 +25,9 @@
           </div>
         </div>
       </div>
+      <div class="flex items-center justify-center mt-10" v-else>
+        <button class="btn btn-square loading"></button>
+      </div>
     </div>
   </div>
 </template>

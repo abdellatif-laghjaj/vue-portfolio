@@ -7,7 +7,7 @@
     </div>
 
     <!-- Section Content -->
-    <div class="skills-content">
+    <div class="skills-content mb-4">
       <p class="skills-text text-center">
         Here are some of my <span class="text-secondary">skills</span> and <span
           class="text-secondary">technologies</span> that I've
@@ -15,7 +15,7 @@
       </p>
 
       <!-- Skills -->
-      <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mt-6">
+      <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mt-6" v-if="loaded">
         <!-- Skill -->
         <div class="skill flex basis-1/3 items-center justify-center flex-col border-primary border-2 gap-3"
              v-for="skill in skills" :key="skill.id">
@@ -24,6 +24,9 @@
             <span class="font-bold">{{ skill.title }}</span>
           </div>
         </div>
+      </div>
+      <div class="flex items-center justify-center mt-10" v-else>
+        <button class="btn btn-square loading"></button>
       </div>
     </div>
   </div>
@@ -34,11 +37,13 @@ import {onMounted, ref} from "vue";
 import api from "../api.js";
 
 let skills = ref([]);
+let loaded = ref(false);
 
 //fetch skills from api
 const fetchSkills = () => {
   api.get("/skills").then((response) => {
     skills.value = response.data;
+    loaded.value = true;
   });
 }
 onMounted(() => {
