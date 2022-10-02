@@ -33,6 +33,6 @@ function getTheme() {
     if (localStorage.getItem('theme') !== null) {
         document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
     } else {
-        document.documentElement.setAttribute('data-theme', 'halloween');
+        document.documentElement.setAttribute('data-theme', 'night');
     }
 }
