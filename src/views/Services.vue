@@ -14,9 +14,9 @@
 
       <div class="flex flex-wrap -m-4 mt-4" v-if="loaded">
         <div class="xl:w-1/3 md:w-1/2 p-4 project" v-for="service in services" :key="service.id">
-          <div :class="`card h-full shadow-2xl ${service.color}`">
+          <div class="card h-full shadow-2xl">
             <figure class="px-10 pt-10">
-              <img :src="service.image" :alt="service.title" class="rounded-xl"/>
+              <img :src="service.image" :alt="service.title" class="rounded-xl w-44"/>
             </figure>
             <div class="card-body items-center text-center">
               <h2 class="card-title font-bold text-3xl">{{ service.title }}</h2>
