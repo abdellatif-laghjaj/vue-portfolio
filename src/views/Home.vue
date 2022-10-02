@@ -11,7 +11,11 @@
 
         <!-- Name -->
         <h1 class="text-4xl font-bold">Hello World 👋</h1>
-        <p class="py-6" id="typewriter"></p>
+        <div class="mockup-code flex items-start flex-col my-3">
+          <pre data-prefix="$"><code>npm install life</code></pre>
+          <pre data-prefix=">" class="text-warning"><code>installing...</code></pre>
+          <pre data-prefix=">" class="text-success"><code>Done!</code></pre>
+        </div>
         <button class="btn btn-primary">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
