@@ -1,10 +1,27 @@
 <template>
+  <!-- Preloader -->
+  <div class="preloader" v-if="!is_loaded">
+    <lottie-player
+        src="raw/loader.json" background="transparent" speed="1"
+        style="width: 300px; height: 300px;"
+        loop autoplay></lottie-player>
+  </div>
   <NavBar/>
   <router-view/>
 </template>
 
 <script setup>
+import {ref} from "vue";
 import NavBar from "./components/NavBar.vue";
+import '@lottiefiles/lottie-player';
+
+let is_loaded = ref(false);
+const delay = 4500;
+
+//show preloader for 2 seconds
+setTimeout(() => {
+  is_loaded.value = true;
+}, delay);
 </script>
 
 <style>
@@ -12,6 +29,19 @@ import NavBar from "./components/NavBar.vue";
 
 #app {
   font-family: 'Roboto', sans-serif;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* width */

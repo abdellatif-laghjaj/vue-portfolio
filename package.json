@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^1.5.7",
     "axios": "^0.27.2",
     "daisyui": "^2.31.0",
     "typewriter-effect": "^2.19.0",
