@@ -1,13 +1,19 @@
 <template>
-  <!-- Preloader -->
-  <div class="preloader" v-if="!is_loaded">
-    <lottie-player
-        src="raw/loader.json" background="transparent" speed="1"
-        style="width: 300px; height: 300px;"
-        loop autoplay></lottie-player>
+  <div>
+    <!-- Preloader -->
+    <div class="preloader" v-if="!is_loaded">
+      <lottie-player
+          src="raw/loader.json" background="transparent" speed="1"
+          style="width: 300px; height: 300px;"
+          loop autoplay></lottie-player>
+    </div>
+    <NavBar/>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component"/>
+      </transition>
+    </router-view>
   </div>
-  <NavBar/>
-  <router-view/>
 </template>
 
 <script setup>
@@ -67,5 +73,13 @@ setTimeout(() => {
 
 #app {
   user-select: none;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease-out;
 }
 </style>

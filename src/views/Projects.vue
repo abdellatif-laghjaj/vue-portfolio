@@ -111,7 +111,6 @@ export default {
   },
   created() {
     this.getProjects();
-    console.log('Projects created');
   }
 }
 </script>

@@ -15,7 +15,6 @@ theme_items.forEach((theme) => {
         e.target.closest('.theme-item').classList.add('outline');
         e.target.closest('.theme-item').classList.add('outline-2');
         const theme = e.target.closest('.theme-item').getAttribute('data-set-theme');
-        console.log(theme);
         document.documentElement.setAttribute('data-theme', theme);
 
         //save theme to local storage
