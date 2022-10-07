@@ -15,7 +15,7 @@
 
       <!-- Filter -->
       <div class="flex items-center justify-center">
-        <div class="tabs tabs-boxed flex items-center justify-between w-[100%] sm:w-72 mt-5">
+        <div class="tabs tabs-boxed flex items-center justify-between w-[100%] sm:w-80 mt-5">
           <a class="tab h-12 font-bold tab-active" @click="filterProjects('all')" data-cat="all">All</a>
           <a class="tab h-12 font-bold" @click="filterProjects('web')" data-cat="web">Web</a>
           <a class="tab h-12 font-bold" @click="filterProjects('mobile')" data-cat="mobile">Mobile</a>
