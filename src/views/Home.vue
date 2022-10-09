@@ -61,20 +61,17 @@ let isAllInstalled = ref(false)
 setInterval(() => {
   if (installationPercentage1.value === '100%') {
     isInstalled1.value = true
+    
+    if (installationPercentage2.value === '100%') {
+      isAllInstalled.value = true
+    } else {
+      installationPercentage2.value = parseInt(installationPercentage2.value) + 1 + '%'
+    }
+
     return
   }
   installationPercentage1.value = parseInt(installationPercentage1.value) + 1 + '%'
 }, 30)
-
-if (isInstalled1.value) {
-  setInterval(() => {
-    if (installationPercentage2.value === '100%') {
-      isInstalled2.value = true
-      return
-    }
-    installationPercentage2.value = parseInt(installationPercentage2.value) + 1 + '%'
-  }, 30)
-}
 
 if (isInstalled2.value && isInstalled1.value) {
   isAllInstalled.value = true
