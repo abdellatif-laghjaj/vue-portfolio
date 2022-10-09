@@ -21,8 +21,9 @@
         </h3>
         <div class="mockup-code flex items-start flex-col my-3">
           <pre data-prefix="$"><code>npm install <span class="text-success">@love.js</span> </code></pre>
-          <pre data-prefix=">" class="text-warning"><code>installing...<code>{{ installationPercentage }}</code></code></pre>
-          <pre data-prefix=">" class="text-error" v-if="isInstalled"><code>error: love not found</code></pre>
+          <pre data-prefix=">" class="text-warning"><code>installing...<code>{{ installationPercentage1 }}</code></code></pre>
+          <pre data-prefix=">" class="text-warning" v-if="isInstalled1"><code>installing...<code>{{ installationPercentage2 }}</code></code></pre>
+          <pre data-prefix=">" class="text-error" v-if="isAllInstalled"><code>error: love not found</code></pre>
         </div>
         <label class="btn btn-primary modal-button w-full sm:w-auto" for="cv-modal">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -50,17 +51,34 @@
 
 <script setup>
 import { ref } from 'vue'
-let installationPercentage = ref('0%')
-let isInstalled = ref(false)
+let installationPercentage1 = ref('0%')
+let installationPercentage2 = ref('0%')
+let isInstalled1 = ref(false)
+let isInstalled2 = ref(false)
+let isAllInstalled = ref(false)
 
 //increase installation percentage every 100ms
 setInterval(() => {
-  if (installationPercentage.value === '100%') {
-    isInstalled.value = true
+  if (installationPercentage1.value === '100%') {
+    isInstalled1.value = true
     return
   }
-  installationPercentage.value = parseInt(installationPercentage.value) + 1 + '%'
-}, 25)
+  installationPercentage1.value = parseInt(installationPercentage1.value) + 1 + '%'
+}, 30)
+
+if (isInstalled1.value) {
+  setInterval(() => {
+    if (installationPercentage2.value === '100%') {
+      isInstalled2.value = true
+      return
+    }
+    installationPercentage2.value = parseInt(installationPercentage2.value) + 1 + '%'
+  }, 30)
+}
+
+if (isInstalled2.value && isInstalled1.value) {
+  isAllInstalled.value = true
+}
 </script>
 
 <style scoped>
