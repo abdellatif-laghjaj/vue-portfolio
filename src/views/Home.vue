@@ -22,7 +22,7 @@
         <div class="mockup-code flex items-start flex-col my-3">
           <pre data-prefix="$"><code>npm install <span class="text-success">@love.js</span> </code></pre>
           <pre data-prefix=">" class="text-warning"><code>installing...<code>{{ installationPercentage }}</code></code></pre>
-          <pre data-prefix=">" class="text-error" v-if="isInstalled"><code>fatal error: love not found</code></pre>
+          <pre data-prefix=">" class="text-error" v-if="isInstalled"><code>error: love not found</code></pre>
           <pre data-prefix="#" v-if="isInstalled"><code>try npm install <span class="text-secondary italic">-g</span> <span class="text-warning">@gf.js</span></code></pre>
         </div>
         <label class="btn btn-primary modal-button w-full" for="cv-modal">
@@ -56,7 +56,7 @@ import { ref } from "vue";
 let installationPercentage = ref("0%");
 let isInstalled = ref(false);
 let delay = ref(30);
-let delayBeforeInstallation = ref(4200);
+let delayBeforeInstallation = ref(4150);
 
 //increase installation percentage every 100ms
 
