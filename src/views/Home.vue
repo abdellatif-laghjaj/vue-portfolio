@@ -21,7 +21,7 @@
         </h3>
         <div class="mockup-code flex items-start flex-col my-3">
           <pre data-prefix="$"><code>npm install <span class="text-success">@love.js</span> </code></pre>
-          <pre data-prefix=">" class="text-warning"><code>installing...<code ref="installationPercentage">0%</code></code></pre>
+          <pre data-prefix=">" class="text-warning"><code>installing...<code>{{ installationPercentage }}</code></code></pre>
           <pre data-prefix=">" class="text-error" v-if="isInstalled"><code>error: love not found</code></pre>
         </div>
         <label class="btn btn-primary modal-button w-full sm:w-auto" for="cv-modal">
@@ -54,14 +54,12 @@ let installationPercentage = ref('0%')
 let isInstalled = ref(false)
 
 //increase installation percentage every 100ms
-let interval = setInterval(() => {
-  let percentage = parseInt(installationPercentage.value.innerHTML)
-  if (percentage < 100) {
-    installationPercentage.value.innerHTML = percentage + 1 + '%'
-  } else {
-    clearInterval(interval)
+setInterval(() => {
+  if (installationPercentage.value === '100%') {
     isInstalled.value = true
+    return
   }
+  installationPercentage.value = parseInt(installationPercentage.value) + 1 + '%'
 }, 25)
 </script>
 
