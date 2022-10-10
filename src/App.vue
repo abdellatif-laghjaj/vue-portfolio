@@ -3,11 +3,15 @@
     <!-- Preloader -->
     <div class="preloader" v-if="!is_loaded">
       <lottie-player
-          src="raw/loader.json" background="transparent" speed="1"
-          style="width: 300px; height: 300px;"
-          loop autoplay></lottie-player>
+        src="raw/loader.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay
+      ></lottie-player>
     </div>
-    <NavBar/>
+    <NavBar />
     <router-view v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
         <div :key="route.name">
@@ -19,9 +23,9 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 import NavBar from "./components/NavBar.vue";
-import '@lottiefiles/lottie-player';
+import "@lottiefiles/lottie-player";
 
 let is_loaded = ref(false);
 const delay = 4500;
@@ -34,7 +38,7 @@ setTimeout(() => {
 
 <style>
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .preloader {
@@ -75,11 +79,13 @@ setTimeout(() => {
   user-select: none;
 }
 
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease-out;
 }
 </style>
