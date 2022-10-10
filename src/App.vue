@@ -41,14 +41,6 @@ setTimeout(() => {
   font-family: "Poppins", sans-serif;
 }
 
-#app{
-  background-image: url("/raw/animated_bg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 .preloader {
   position: fixed;
   top: 0;

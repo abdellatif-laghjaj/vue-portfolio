@@ -80,11 +80,4 @@ const startInstallation = () => {
 </script>
 
 <style scoped>
-.hero {
-  background-image: url("/raw/animated_bg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
 </style>
