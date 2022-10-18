@@ -19,8 +19,8 @@
       <div class="flex-1 flex-grow py-4 px-3 h-full text-lg card bg-base-300 rounded-box">
         <p class="mb-6">
           Hello World 👋! I'm <span class="text-secondary">Abdellatif Laghjaj</span> <span
-            class="text-secondary">full-stack</span> developer and a student in <span
-            class="text-secondary">computer science</span>. I've
+            class="text-secondary">full-stack</span> developer and a <span
+            class="text-secondary">computer science</span> student. I've
           been an enthusiast of <span class="text-secondary">programming</span> my
           whole life. IMHO, programming is like a game of chess with a machine! I'm interested in <span
             class="text-secondary">web dev</span>, <span class="text-secondary">mobile dev</span>, and
