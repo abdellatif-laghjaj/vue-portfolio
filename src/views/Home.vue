@@ -32,7 +32,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path>
           </svg>
-          <span class="ml-2">download resume</span>
+          <span class="ml-2" @click="download('src/assets/resume.pdf')">download resume</span>
         </label>
       </div>
     </div>
@@ -44,10 +44,10 @@
     <div class="modal-box">
       <h3 class="font-bold text-lg">Download Resume</h3>
       <p class="py-4">
-        My resume is not ready yet, but you can contact me or come back later.
+        Resume has been download succusfully :)
       </p>
       <div class="modal-action">
-        <label for="cv-modal" class="btn">Ok, Got it!</label>
+        <label for="cv-modal" class="btn">Ok</label>
       </div>
     </div>
   </div>
@@ -77,6 +77,16 @@ const startInstallation = () => {
       parseInt(installationPercentage.value) + 1 + "%";
   }, delay.value);
 };
+
+//download resume
+const download = (url) => {
+  const a = document.createElement('a')
+  a.href = url
+  a.download = url.split('/').pop()
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+}
 </script>
 
 <style scoped>
