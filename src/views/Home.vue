@@ -44,7 +44,7 @@
     <div class="modal-box">
       <h3 class="font-bold text-lg">Download Resume</h3>
       <p class="py-4">
-        Resume has been download succusfully :)
+        My resume is not available for download yet, but you can contact me <router-link to="/contact" class="text-primary">here</router-link>.
       </p>
       <div class="modal-action">
         <label for="cv-modal" class="btn">Ok</label>
