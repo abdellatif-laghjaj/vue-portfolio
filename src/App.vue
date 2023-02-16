@@ -3,7 +3,7 @@
     <!-- Preloader -->
     <div class="preloader" v-if="!is_loaded">
       <lottie-player
-        src="raw/loader.json"
+        src="raw/loader-1.json"
         background="transparent"
         speed="1"
         style="width: 300px; height: 300px"
