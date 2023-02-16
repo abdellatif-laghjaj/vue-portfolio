@@ -20,12 +20,12 @@
           </svg>
         </h3>
         <div class="mockup-code flex items-start flex-col my-3">
-          <pre data-prefix="$"><code>npm install @love.js</code></pre>
+          <pre data-prefix="$"><code>npm install @code</code></pre>
           <pre data-prefix=">"
             class="text-warning"><code>installing...<code>{{ installationPercentage }}</code></code></pre>
-          <pre data-prefix=">" class="text-error" v-if="isInstalled"><code>error: love not found</code></pre>
+          <pre data-prefix=">" class="text-error" v-if="isInstalled"><code>error: code not found</code></pre>
           <pre data-prefix="#"
-            v-if="isInstalled"><code>try npm install -g @gf.js</code></pre>
+            v-if="isInstalled"><code>try npm install -g @code</code></pre>
         </div>
         <label class="btn btn-primary modal-button w-full" for="cv-modal">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
